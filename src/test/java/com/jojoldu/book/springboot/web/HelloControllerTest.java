@@ -49,9 +49,13 @@ public class HelloControllerTest {
         int amount = 1000;
 
         mvc.perform(get("/hello/dto")
+                        // 요청 파라미터 설정
+                        // 값은 String만 되므로 문자열로 변경
                         .param("name", name)
                         .param("amount", String.valueOf(amount)))
                 .andExpect(status().isOk())
+                // jsonPath: JSON 응답값을 필드별로 검증할 수 있는 메서드
+                // $를 기준으로 필드명 명시
                 .andExpect(jsonPath("$.name", is(name)))
                 .andExpect(jsonPath("$.amount", is(amount)));
     }
