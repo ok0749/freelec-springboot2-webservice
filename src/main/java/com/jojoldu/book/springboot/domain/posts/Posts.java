@@ -4,6 +4,7 @@ import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 // 클래스 내 모든 필드의 Getter 메소드 자동 생성
